@@ -1,0 +1,35 @@
+body{
+  backround-color:black;
+  text-align:center;
+  color:black;
+  font-family:cursive;
+  text-color:white;
+}
+h1{
+  text-decoration:underline;
+  border-style:dotted;
+  border-color:grey;
+  border-width:3px;
+  padding:7px;
+}
+#cn{
+  text-decoration:underline;
+  color:gold;
+  font-size:40px;
+}
+img{
+  border-radius:10%;
+  width:355px;
+  height:200px;
+}
+#one{
+  color:green;
+  word-spacing:9px;
+  font-size:15px;
+  
+}
+conclude{
+  font-family:cursive;
+  font-size:18px;
+  font-color:green;
+}

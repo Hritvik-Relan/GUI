@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Flower Garden</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #8fd694;
+        }
+
+        .garden {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: bloom 0.5s ease-in-out;
+        }
+
+        @keyframes bloom {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="garden" onclick="plantFlower(event)"></div>
+
+    <script>
+        function plantFlower(event) {
+            const flower = document.createElement("img");
+            flower.className = "flower";
+            flower.src = getRandomFlower();
+            flower.style.left = `${event.clientX - 25}px`;
+            flower.style.top = `${event.clientY - 25}px`;
+
+            document.querySelector(".garden").appendChild(flower);
+        }
+
+        function getRandomFlower() {
+            const flowers = [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Simple_red_flower.svg/512px-Simple_red_flower.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Simple_yellow_flower.svg/512px-Simple_yellow_flower.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Simple_purple_flower.svg/512px-Simple_purple_flower.svg.png"
+            ];
+            return flowers[Math.floor(Math.random() * flowers.length)];
+        }
+    </script>
+</body>
+</html>
